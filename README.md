@@ -1,6 +1,6 @@
 # Getting Started with Covid tracker
 
-Website:  [Covid Tracker](https://covidtracker.pokpong.me)
+Website: https://covidtracker.pokpong.me
 
 Server: https://github.com/davepokpong/covidtracker-server
 
