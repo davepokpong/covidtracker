@@ -1,3 +1,4 @@
+import { PointBorder } from 'devextreme-react/chart'
 import { Line } from 'react-chartjs-2'
 // import { useState, useEffect } from 'react'
 
@@ -14,7 +15,7 @@ export default function Graph(props: any) {
                     {
                         label: 'New Cases',
                         data: props.data.map((ele: any) => ele.new_case),
-                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderColor: 'rgb(255, 99, 132)',
                         pointBorderColor: 'transparent',
                     },
                     {
