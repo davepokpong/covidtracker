@@ -68,6 +68,7 @@ export default function Home() {
     const [covData, setCovData] = useState<ICov>(defaultEmptyCov)
     const [chkFin, setChkFin] = useState<boolean>(false)
     const [show, hide] = useLoading();
+    const [date, setDate] = useState<any[]>([])
 
     const getCovData = async () => {
         show("Getting data ...")
@@ -95,6 +96,8 @@ export default function Home() {
         }
         else {
             // console.log(covData)
+            let text = covData.data[covData.data.length-1].txn_date
+            setDate(text.split("-"))
         }
     }, [covData])
 
@@ -108,7 +111,7 @@ export default function Home() {
                         fontSize: "33px",
                         fontWeight: "bold",
                     }}>Current COVID-19 <img className="des" src={CovidIcon} style={{ width: "50px" }} /> Situation in Thailand <img src={Th} style={{ width: "40px" }} /></p>
-                    <p className="ms-2">Data from <a href="https://covid19.ddc.moph.go.th/">DDC OpenData<img src="https://covid19.ddc.moph.go.th/images/logo-ddc.png" style={{ width: "30px", marginRight: "10px" }} className="ms-2" /></a>(Last updated: {covData.data[covData.data.length-1].txn_date})</p>
+                    <p className="ms-2">Data from <a href="https://covid19.ddc.moph.go.th/">DDC OpenData<img src="https://covid19.ddc.moph.go.th/images/logo-ddc.png" style={{ width: "30px", marginRight: "10px" }} className="ms-2" /></a>(Last updated: {date[2]}/{date[1]}/{date[0]})</p>
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center">
