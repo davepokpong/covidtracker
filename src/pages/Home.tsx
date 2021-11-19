@@ -80,7 +80,6 @@ export default function Home() {
         // console.log(data.data)
         setCovData(cov)
         // console.log(cov)
-
         setChkFin(true)
         hide()
     }
@@ -90,12 +89,12 @@ export default function Home() {
     }
 
     useEffect(() => {
-        console.log(covData)
+        // console.log(covData)
         if (covData.chkNewCase === "default") {
             init()
         }
         else {
-            console.log(covData)
+            // console.log(covData)
         }
     }, [covData])
 
@@ -108,8 +107,8 @@ export default function Home() {
                     <p style={{
                         fontSize: "33px",
                         fontWeight: "bold",
-                    }}>Current COVID-19 <img src={CovidIcon} style={{ width: "50px" }} /> Situation in Thailand <img src={Th} style={{ width: "40px" }} /></p>
-                    <p className="ms-2">Data from <a href="https://covid19.ddc.moph.go.th/">DDC OpenData<img src="https://covid19.ddc.moph.go.th/images/logo-ddc.png" style={{ width: "30px" }} className="ms-2" /></a></p>
+                    }}>Current COVID-19 <img className="des" src={CovidIcon} style={{ width: "50px" }} /> Situation in Thailand <img src={Th} style={{ width: "40px" }} /></p>
+                    <p className="ms-2">Data from <a href="https://covid19.ddc.moph.go.th/">DDC OpenData<img src="https://covid19.ddc.moph.go.th/images/logo-ddc.png" style={{ width: "30px", marginRight: "10px" }} className="ms-2" /></a>(Last updated: {covData.data[covData.data.length-1].txn_date})</p>
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center">
